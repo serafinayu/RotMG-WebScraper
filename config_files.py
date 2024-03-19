@@ -9,10 +9,10 @@ config = ConfigParser()
 
 # Create a default config setting with the database info
 config["DEFAULT"] = {
-    "database": "tutorial", 
-    "user": "sera", 
+    "database": "rotmg-ssnl-loot", 
+    "user": "rotmg", 
     "host": 'localhost',
-    "password": "2482",
+    "password": "realm",
     "port": 5432
 }
 

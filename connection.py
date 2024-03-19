@@ -29,11 +29,13 @@ try:
     cur.execute("""DROP TABLE IF EXISTS items""")
     # Create the table
     cur.execute("""CREATE TABLE IF NOT EXISTS items(
-                item_id SERIAL PRIMARY KEY,
-                item_name VARCHAR (50) UNIQUE NOT NULL,
-                item_category_type VARCHAR (10) NOT NULL,
-                item_type VARCHAR (20), 
-                item_amount INTEGER NOT NULL); """
+                id SERIAL PRIMARY KEY,
+                name VARCHAR (50) UNIQUE NOT NULL,
+                imgUrl VARCHAR (100) NOT NULL,
+                tier VARCHAR (3) NOT NULL,
+                category VARCHAR (10) NOT NULL,
+                subCategory VARCHAR (20), 
+                amount INTEGER NOT NULL); """
                 )
     
     # Make the changes to the database persistent
