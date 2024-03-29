@@ -1,4 +1,4 @@
-Dependencies
+This Dependencies
 - pip3 install psycopg2
     - Used to connect Python to existing database on PostgreSQL server.
 - pip3 install requests
@@ -9,3 +9,4 @@ Dependencies
 
 Notes during development:
 - Connecting Python to PostgreSQL
+- I ended up moving this project to the Rotmg-Ssnl-Loot repo since this api will be used there. I have already ensured that it is functioning and working on that repo.
