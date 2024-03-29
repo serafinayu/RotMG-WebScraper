@@ -9,6 +9,6 @@ source rotmg-webscraper-venv/bin/activate
 pip3 install -r requirements.txt
 
 # Scrape realmeye and store the data in the database
-python3 ./webScraper.py
+python3 ./realmeye-scraper/webScraper.py
 # Start the api on port 5000
-python3 ./app.py
+python3 ./realmeye-scraper/app.py
