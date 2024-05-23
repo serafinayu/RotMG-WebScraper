@@ -9,9 +9,6 @@ def main():
     # Create the table in the database
     create_db()
 
-    # item-category-types
-    itemCategory = ['weapons', 'abilities', 'armor', 'rings', 'etc']
-
     # Store the item types and their links in dictionaries
     weapons = getLinks('weapons') # {daggers: /wiki/daggers, dual blades: /wiki/dual-blades}
     abilities = getLinks('ability-items')

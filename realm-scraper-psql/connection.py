@@ -1,4 +1,4 @@
-
+from pymongo import MongoClient
 from configparser import ConfigParser
 import psycopg2 
 
@@ -6,6 +6,14 @@ import psycopg2
 This module has functions that creates a connection to the database, gets the database url, 
 and creates the table in the database
 """
+
+def get_db():
+    uri = "mongodb+srv://PC1:TviTTL1I76X1saDH@rotmg-ssnl-loot.fw8mi0z.mongodb.net/?retryWrites=true&w=majority&appName=ROTMG-Ssnl-Loot"
+    # Create a new client and connect to the server
+    client = MongoClient(uri)
+    # db = client.your_database_name
+    db = client['ROTMG-Ssnl-Loot']['items']
+    return db
 
 # Function to connect to the database
 def connect_to_db():

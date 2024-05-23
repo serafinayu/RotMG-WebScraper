@@ -1,0 +1,1 @@
+# The files in this folder are a variation of the realmeye scraper that uses and stores item info in a local PSQL database. 

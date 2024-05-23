@@ -33,7 +33,7 @@ Requirements: Operating System  Ubuntu 22.04
 ---
 
 ### Dependencies
-- psycopg2 - Used to connect Python to existing database on PostgreSQL server.
+- psycopg2-binary - Used to connect Python to existing database on PostgreSQL server. Originally was using psycopg2 but realized it requires other dependencies that not all environments have. The binary version does not require extra dependencies making it more compatible on other devices.
 - requests - Used with BeautifulSoup to scrape data from web pages.
 - bs4 - This is the BeautifulSoup library which allows me to web scrape pages
 - Flask - Used to create the API endpoints
