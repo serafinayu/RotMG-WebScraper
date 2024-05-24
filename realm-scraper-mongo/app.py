@@ -23,7 +23,7 @@ def get_items():
 @app.route('/items/<category>', methods=['GET'])
 def get_items_by_category(category):
     try:
-        items = db.items.find({'category': category.lower()})
+        items = db.items.find({'category': category})
         return dumps(items), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -32,7 +32,7 @@ def get_items_by_category(category):
 @app.route('/items/<category>/<subcategory>', methods=['GET'])
 def get_items_by_subcategory(category, subcategory):
     try:
-        items = db.items.find({'category': category.lower(), 'subcategory': subcategory.lower()})
+        items = db.items.find({'category': category, 'subcategory': subcategory})
         return dumps(items), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
@@ -59,7 +59,7 @@ def get_categories():
 @app.route('/items/<category>/subcategories', methods=['GET'])
 def get_subcategories(category):
     try:
-        subcategories = db.items.distinct('subcategory', {'category': category.lower()})
+        subcategories = db.items.distinct('subCategory', {'category': category})
         return jsonify(subcategories), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500

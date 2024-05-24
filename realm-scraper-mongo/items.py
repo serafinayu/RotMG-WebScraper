@@ -61,7 +61,7 @@ def storeItems(link, categoryName, subCategory):
                 "imgUrl": imgSrc,
                 "tier": tier,
                 "category": category,
-                "subCategory": subCategory,
+                "subcategory": subCategory,
                 "amount": 0
             }
             print(item)
