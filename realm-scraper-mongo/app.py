@@ -64,5 +64,33 @@ def get_subcategories(category):
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
+"""Updates the amount for a specified item"""
+@app.route('/items/<item_name>/<amount>', methods=['PUT'])
+def update_item_amount(item_name, amount):
+    try:
+        # Convert amount to integer
+        amount = int(amount)
+
+        # Check if amount is negative
+        if amount < 0:
+            return jsonify({'error': 'Amount must be non-negative'}), 400
+        
+        # Update the amount for the specified item
+        result = db.items.update_one(
+            {'name': item_name},
+            {'$inc': {'amount': amount}}
+        )
+
+        # Check if the update was successful
+        if result.modified_count == 1:
+            return jsonify({'message': f'Amount for item "{item_name}" updated successfully'}), 200
+        else:
+            return jsonify({'error': f'Item "{item_name}" not found'}), 404
+
+    except ValueError:
+        return jsonify({'error': 'Invalid amount or item specified'}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run()

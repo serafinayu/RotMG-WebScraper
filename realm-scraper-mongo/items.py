@@ -30,6 +30,8 @@ def storeItems(link, categoryName, subCategory):
     tbodies = soup.find_all('tbody')
     for tbody in tbodies:
         trs = tbody.find_all('tr')
+        if len(trs) < 2: # Skips rows if the le
+            continue
         for tr in trs:
             tds = tr.find_all('td')
             count = 0
@@ -74,8 +76,18 @@ def insertItems(items):
     try:
         db = connection.get_db()
         items_collection = db.items
+        items_collection.create_index([('name', 1)], unique=True)
         # Insert the document into the items collection
-        items_collection.insert_many(items)
+        # items_collection.insert_many(items)
+
+        # Upsert operation to ensure no duplicate insertion
+        for item in items:
+            items_collection.update_one(
+                {'name': item['name']},  # Filter criteria
+                {'$setOnInsert': item},  # Insert only if it doesn't exist
+                upsert=True
+            )
+
         print("Items have been added to database")
 
     except Exception as error:
