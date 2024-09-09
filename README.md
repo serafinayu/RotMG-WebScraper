@@ -15,4 +15,5 @@ This is a Flask API that returns basic item info from the game Realm of the Mad 
     - Abilities: Cloaks, Quivers, Spells, Tomes, Helms, Shields, Seals, Poisons, Skulls, Traps, Orbs, Prisms, Scepters, Stars, Wakizashi, Lutes, Maces, Sheaths
     - Armor: Leather Armors, Robes, Heavy Armors
     - Rings: Health Rings, Magic Rings, Attack Rings, Defense Rings, Speed Rings, Dexterity Rings, Vitality Rings, Wisdom Rings, Untiered Rings, Limited Rings
-      
+
+_Note: Currently using an endpoint with any subcategory containing a space does not work_
