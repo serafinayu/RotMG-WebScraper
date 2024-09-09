@@ -16,4 +16,4 @@ This is a Flask API that returns basic item info from the game Realm of the Mad 
     - Armor: Leather Armors, Robes, Heavy Armors
     - Rings: Health Rings, Magic Rings, Attack Rings, Defense Rings, Speed Rings, Dexterity Rings, Vitality Rings, Wisdom Rings, Untiered Rings, Limited Rings
 
-_Note: Currently using an endpoint with any subcategory containing a space does not work_
+_Note: Currently using an endpoint with any subcategory containing a space does not work (Ex: https://realm-scraper.vercel.app/items/Weapons/Morning%20Stars)_
