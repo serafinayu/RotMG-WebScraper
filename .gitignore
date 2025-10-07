@@ -2,3 +2,5 @@ rotmg-webscraper-venv/
 **/__pycache__/
 config.ini
 **/.env
+**/env
+**/venv
